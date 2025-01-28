@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SMaid</title>
+
+    <!-- Favicon (Logo on the Title Bar) -->
+    <link rel="icon" href="./images/Acadamy-logo.jpg" type="image/png" />
+
+    <!-- Linking Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+
+    <!-- Linking Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+/>
+
+
+  </head>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+body {
+    font-family: 'Poppins';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0;
+  
+}
+.navbar .nav-link {
+    color: #1fb3e1;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-right: 20px; /* Adjust space between links */
+  }
+  
+  h1{
+    color:#000000 ;
+    font-weight: 600;
+  }
+  .text {
+    color: #1fb3e1;
+  }
+
+    .hero-section {
+      background-color: #1fb3e1;
+      color: white;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .program-card {
+      border: none;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .btn-register {
+      background-color: #1fb3e1;
+      color: white;
+      font-weight: bold;
+    }
+    .btn-register:hover {
+      background-color: #1593c6;
+    }
+    .register-banner {
+      background-color: #f8f9fa;
+      padding: 30px 20px;
+      text-align: center;
+    }
+    .register-banner h4 {
+      color: #1fb3e1;
+      font-weight: bold;
+    }
+  </style>
+  <body>
+    <main>
+      <!-- Navbar section -->
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- Logo Image -->
+          <img src="./images/Acadamy-logo.jpg" alt="Logo" class="img-fluid" style="max-width: 100px; height: auto;" />
+
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarText"
+            aria-controls="navbarText"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar Links -->
+          <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link navbar-link" href="Home.html"><b>Home</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-link" href="Courses and Fees.html"><b>Courses and Fees</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-link" href="#"><b>Register</b></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link navbar-link" href="#"><b>About SMAid Int’l</b></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+      <!-- <div class="hero-section">
+        <h1>Welcome to SMAid Academy</h1>
+        <p>Your gateway to mastering languages and unlocking new opportunities!</p>
+      </div> -->
+      
+      <!-- English Language Program Section -->
+      <div class="container my-5">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="card program-card p-4">
+              <h2>English Language Program</h2>
+              <p><b>No need to go to Accra! Get professional English training in Sunyani.</b></p>
+              <p><strong>Designed for:</strong> Francophone students studying in Ghana</p>
+              <h5>Course Focus:</h5>
+              <ul>
+                <li>English grammar and vocabulary</li>
+                <li>Academic writing and reading comprehension</li>
+                <li>Listening and speaking skills</li>
+                <li>Everyday conversational English</li>
+              </ul>
+              <p>📅 <strong>Duration:</strong> 4 weeks, 8 weeks, or 12 weeks</p>
+              <p>📍 <strong>Location:</strong> SMAid Academy, Sunyani</p>
+              <p>🏠 <strong>Accommodation:</strong> Affordable accommodation arrangements are available</p>
+              <p>💰 <strong>Fees:</strong> Starting at [insert amount]</p>
+              <p>🎉 <strong>Register before 1st March and get 20% OFF!</strong></p>
+              <a href="#" class="btn btn-register">Register Now</a>
+            </div>
+          </div>
+      
+          <!-- French Language Program Section -->
+          <div class="col-md-6">
+            <div class="card program-card p-4">
+              <h2>French Language Program</h2>
+              <p style="padding-bottom: 24px;"><b>Learn French without leaving Sunyani!</b></p>
+              <p><strong>Designed for:</strong> Professionals, students, and corporate bodies</p>
+              <h5>Course Focus:</h5>
+              <ul>
+                <li>Basic to advanced French grammar</li>
+                <li>Business and professional French</li>
+                <li>Conversational skills for travel and daily use</li>
+                <li>Writing and reading comprehension</li>
+              </ul>
+              <p>📅 <strong>Duration:</strong> 4 weeks, 8 weeks, or 12 weeks</p>
+              <p>📍 <strong>Mode:</strong> In-person</p>
+              <p style="padding-bottom: 27px;">📍 <strong>Location:</strong> SMAid Academy, Sunyani</p>
+              <p>💰 <strong>Fees:</strong> Starting at [insert amount]</p>
+              <p>🎉 <strong>Register before 1st March and get 20% OFF!</strong></p>
+              <a href="#" class="btn btn-register">Register Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+
+      <div class="container mt-4">
+        <div class="row" style="padding-top: 70px; padding-bottom: 70px;">
+          <div class="col-12 text-center">
+            <h5>
+            No need to travel far—SMAid Academy brings expert language training to you!
+        </h5>
+            <h4>
+              <a href="your-link-here" style="color: #1fb3e1; text-decoration: none;">[Register Now & Save 20%]</a>
+            </h4>
+          </div>
+        </div>
+      </div>
+      
+      
+      <!-- Footer -->
+
+      <div class="footer">
+        <div class="container">
+          <div class="row">
+            <!-- Left section: Copyright -->
+            <div class="col-12 col-lg-8 mb-3 mb-lg-0">
+              <div class="section-content">
+                <p class="copyright-text text-center text-lg-start">© 2025 SMaid Acadamy</p>
+              </div>
+            </div>
+      
+            <!-- Right section: Contact -->
+            <div class="col-12 col-md-4 text-center text-md-end">
+              <p class="contact">
+                <span>Phone: 020-Xxx-Xxxx</span>
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+ 
+    
+    </main>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
+
+     

@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Miniver&family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+body {
+    font-family: 'Poppins';
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 175%;
+    letter-spacing: 0;
+  
+}
+.navbar .nav-link {
+    color: #1fb3e1;
+    font-family: 'Arial', sans-serif;
+    font-size: 18px;
+    text-transform: uppercase;
+    margin-right: 20px; /* Adjust space between links */
+  }
+  
+  h1{
+    color:#000000 ;
+    font-weight: 600;
+  }
+  .text {
+    color: #1fb3e1;
+  }
+
+
+/* Adjust text positioning and scaling for responsiveness */
+/* Make images fully responsive */
+.carousel-item img {
+  height: auto;
+  max-height: 600px;
+  object-fit: cover;
+  width: 100%;
+}
+
+/* Center and scale the text */
+.custom-caption {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  /* Semi-transparent background */
+  padding: 20px;
+  padding-top: 90px;
+  border-radius: 10px;
+  width: 90%; /* Restrict width to prevent overflow */
+  max-width: 800px; /* Ensure consistent sizing */
+}
+
+/* Text scaling for responsiveness */
+.custom-caption h1 {
+  font-size: clamp(1.8rem, 4vw, 3rem); /* Dynamically scale between min and max sizes */
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.custom-caption p {
+  font-size: clamp(1rem, 2.5vw, 1.5rem); /* Dynamically scale between min and max sizes */
+  color: #ddd;
+  line-height: 1.4;
+}
+
+/* Optional: Adjust carousel height for smaller screens */
+@media (max-width: 768px) {
+  .carousel-item img {
+    max-height: 400px;
+  }
+
+  .custom-caption {
+    padding: 15px;
+  }
+}
+
+  
+  .card {
+    background-color:  #A6E7FC;
+    margin: 15px;
+    border: 3px ; /* Thicker border with custom color */
+    border-radius: 10px;      /* Rounded corners for a polished look */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Optional shadow for emphasis */
+  }
+  
+  .card:hover {
+    background-color: #1fb3e1; /* Change to your desired hover color */
+    color: white; /* Ensure this applies to all text in the card */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+  }
+
+  .card:hover h5, 
+  .card:hover p {
+    color: white; /* Change text to white on hover */
+  }
+  .footer {
+    padding: 20px 0;
+background-color: #1fb3e1;
+    color: white;
+    margin-top: 50px;
+  }
+
+  .contact {
+    font-size: 16px;
+  }
+
+  .copyright-text {
+    font-size: 14px;
+  }
+
+  @media (max-width: 576px) {
+    .contact {
+      font-size: 14px;
+    }
+    .copyright-text {
+      font-size: 12px;
+    }
+  }
+
+  
