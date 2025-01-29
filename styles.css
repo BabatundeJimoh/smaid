@@ -33,6 +33,59 @@ body {
   width: 100%;
 }
 
+.hover-effect {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hover-effect:hover {
+  transform: scale(1.1); /* Zoom effect on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+}
+/* Add animation to the container text */
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Apply animation delay for each element */
+h1, p {
+  animation-name: fadeInUp;
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+h1 {
+  animation-delay: 0s; /* No delay for the heading */
+}
+
+p:nth-of-type(1) {
+  animation-delay: 1s; /* 1-second delay for the first paragraph */
+}
+
+p:nth-of-type(2) {
+  animation-delay: 2s; /* 2-second delay for the second paragraph */
+}
+
+p:nth-of-type(3) {
+  animation-delay: 3s; /* 3-second delay for the third paragraph */
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Center and scale the text */
 .custom-caption {
   position: absolute;
