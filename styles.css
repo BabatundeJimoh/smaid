@@ -128,6 +128,20 @@ p:nth-of-type(3) {
   }
 }
 
+
+/* External CSS file */
+.offer-section-container {
+  background:  url('./images/blue-curve-background_53876-113112.webp');
+  background-size: cover;
+  background-position: center;
+  height: 400px;
+  padding-top: 150px;
+  padding-bottom: 50px;
+  margin-top: 150px;
+  margin-bottom: 150px;
+}
+
+
   
   .card {
     background-color:  #A6E7FC;
