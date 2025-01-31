@@ -34,6 +34,7 @@ body {
   max-height: 600px;
   object-fit: cover;
   width: 100%;
+  filter: brightness(50%); /* Lower value = darker image */
 }
 
 .hover-effect {
@@ -59,24 +60,24 @@ body {
 /* Apply animation delay for each element */
 h1, p {
   animation-name: fadeInUp;
-  animation-duration: 1s;
+  animation-duration: 2s;
   animation-fill-mode: both;
 }
 
 h1 {
-  animation-delay: 0s; /* No delay for the heading */
+  animation-delay: 1s; /* No delay for the heading */
 }
 
 p:nth-of-type(1) {
-  animation-delay: 1s; /* 1-second delay for the first paragraph */
+  animation-delay: 2s; /* 1-second delay for the first paragraph */
 }
 
 p:nth-of-type(2) {
-  animation-delay: 2s; /* 2-second delay for the second paragraph */
+  animation-delay: 3s; /* 2-second delay for the second paragraph */
 }
 
 p:nth-of-type(3) {
-  animation-delay: 3s; /* 3-second delay for the third paragraph */
+  animation-delay: 4s; /* 3-second delay for the third paragraph */
 }
 
 
@@ -160,29 +161,6 @@ p:nth-of-type(3) {
   .card:hover h5, 
   .card:hover p {
     color: white; /* Change text to white on hover */
-  }
-  .footer {
-    padding: 20px 0;
-background-color: #1fb3e1;
-    color: white;
-    margin-top: 50px;
-  }
-
-  .contact {
-    font-size: 16px;
-  }
-
-  .copyright-text {
-    font-size: 14px;
-  }
-
-  @media (max-width: 576px) {
-    .contact {
-      font-size: 14px;
-    }
-    .copyright-text {
-      font-size: 12px;
-    }
   }
 
   
