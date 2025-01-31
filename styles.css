@@ -36,6 +36,16 @@ body {
   width: 100%;
   filter: brightness(50%); /* Lower value = darker image */
 }
+ /* Slows down the slide transition */
+ .carousel-item {
+  transition: transform 2s ease-in-out; /* Slows down the transition effect */
+}
+
+
+
+
+
+
 
 .hover-effect {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
