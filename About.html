@@ -34,13 +34,44 @@
         padding: 40px 0;
       }
       
-      .counter {
-  font-size: 2.5rem; /* Adjust the font size as needed */
+      /* .counter {
+  font-size: 2.5rem; 
   font-weight: bold;
-  color: #1fb3e1; /* Customize the color */
+  color: #1fb3e1; 
 
 }
 .impact-section {
+    position: relative;
+    background-image: url('./images/blue-curve-background_53876-113112.webp'); 
+    background-size: cover;
+    background-position: center;
+    padding-top: 30px;
+    padding-bottom: 80px;
+  }
+
+  .impact-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #0073A8; 
+    z-index: 1;
+  }
+
+  .container-fluid {
+    position: relative;
+    z-index: 2;
+  } */
+  .counter {
+    font-size: 2.5rem; /* Adjust the font size as needed */
+    font-weight: bold;
+    color: #1fb3e1; /* Customize the color */
+  }
+
+  /* Impact Section with Background and Overlay */
+  .impact-section {
     position: relative;
     background-image: url('./images/blue-curve-background_53876-113112.webp'); /* Replace with your image URL */
     background-size: cover;
@@ -56,7 +87,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #0073A8; /* Blue overlay with transparency */
+    background-color: rgba(0, 115, 168, 0.7); /* Blue overlay with transparency */
     z-index: 1;
   }
 
@@ -65,6 +96,12 @@
     z-index: 2;
   }
 
+  /* Text Color Styling */
+  .impact-section h1,
+  .impact-section p {
+    color: white;
+  }
+  
 
 
 
@@ -117,26 +154,31 @@
 
       
 
-      <!-- Hero Section -->
-      <div class="container text-center mt-4">
-        <div class="row align-items-center" style="padding-top: 40px;padding-bottom: 90px;">
-            <div class="col-lg-6 col-md-12 d-flex justify-content-center">
-                <img src="https://smaid.org/wp-content/uploads/2023/12/SMAid-Our-Impact-EU-Enough-Project.jpg" 
-                     alt="Health Image" 
-                     class="img-fluid rounded shadow w-100" 
-                     style="max-width: 600px; height: auto;">
-            </div>
-            
-          <div class="col-lg-6 col-md-12">
-            <p>
-              SMAid International, a Christian health and development organization, is on a mission to transform the
-              lives of people living in poverty-stricken conditions. With a remarkable 99% efficiency rating, SMAid
-              responds to the needs of the underserved by providing life-saving medicines, disease prevention, and
-              health promotion.
-            </p>
-          </div>
-        </div>
+       <!-- Hero Section -->
+<div class="container text-center mt-4">
+    <div class="row align-items-center" style="padding-top: 40px; padding-bottom: 90px;">
+      
+      <!-- Text Column (Appears First on Small Screens, Second on Large Screens) -->
+      <div class="col-lg-6 col-md-12 order-1 order-lg-2">
+        <p>
+          SMAid International, a Christian health and development organization, is on a mission to transform the
+          lives of people living in poverty-stricken conditions. With a remarkable 99% efficiency rating, SMAid
+          responds to the needs of the underserved by providing life-saving medicines, disease prevention, and
+          health promotion.
+        </p>
       </div>
+  
+      <!-- Image Column (Appears Second on Small Screens, First on Large Screens) -->
+      <div class="col-lg-6 col-md-12 d-flex justify-content-center order-2 order-lg-1">
+        <img src="https://smaid.org/wp-content/uploads/2023/12/SMAid-Our-Impact-EU-Enough-Project.jpg" 
+             alt="Health Image" 
+             class="img-fluid rounded shadow w-100" 
+             style="max-width: 600px; height: auto;">
+      </div>
+  
+    </div>
+  </div>
+  
 
       <!-- Impact Section -->
        <div style="background-color: #f5f5f5;padding-bottom: 80px;padding-top: 30px;">
@@ -234,58 +276,53 @@
     </div>
     </div>
     </div>
-
-<!-- Impact Section with Image and Blue Overlay -->
-<div class="impact-section">
-    <div class="container-fluid">
-      <!-- First Row -->
-      <div class="row">
-        <h1 style="text-align: center; padding-bottom: 50px; color: white;"><b>Our Impact</b></h1>
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="500" style="color: white;">0+</h1>
-          <p style="color:#a6e7fc">Communities</p>
-        </div>
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="500" style="color: white;">0+</h1>
-          <p style="color: #a6e7fc">Community Leaders Trained</p>
-        </div>
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="48000" style="color: white;">0+</h1>
-          <p style="color: #a6e7fc;">Youth</p>
-        </div>
-      </div>
-  
-      <!-- Second Row -->
-      <div class="row mt-2">
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="5000" style="color: white;">0+</h1>
-          <p style="color: #a6e7fc;">Healthcare Beneficiaries</p>
-        </div>
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="15000" style="color: white;">0+</h1>
-          <p style="color:#a6e7fc;">Clean Water Beneficiaries</p>
-        </div>
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="15000" style="color: white;">0+</h1>
-          <p style="color: #a6e7fc">WASH Beneficiaries</p>
-        </div>
-      </div>
-  
-      <!-- Third Row -->
-      <div class="row mt-2">
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="21" style="color: white;">0+</h1>
-          <p style="color:#a6e7fc;">Schools</p>
-        </div>
-        <div class="col-4 p-3">
-          <h1 class="counter" data-target="3000" style="color: white;">0+</h1>
-          <p style="color: #a6e7fc;">Students</p>
+    <div class="impact-section text">
+        <div class="container-fluid">
+          <h1 class="text-white mb-4" style="text-align: center;"><b>Our Impact</b></h1>
+      
+          <div class="row">
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="500">0+</h1>
+              <p>Communities</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="500">0+</h1>
+              <p>Community Leaders Trained</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="48000">0+</h1>
+              <p>Youth</p>
+            </div>
+          </div>
+      
+          <div class="row mt-2">
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="5000">0+</h1>
+              <p>Healthcare Beneficiaries</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="15000">0+</h1>
+              <p>Clean Water Beneficiaries</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="15000">0+</h1>
+              <p>WASH Beneficiaries</p>
+            </div>
+          </div>
+      
+          <div class="row mt-2">
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="21">0+</h1>
+              <p>Schools</p>
+            </div>
+            <div class="col-12 col-md-6 col-lg-4 p-3">
+              <h1 class="counter" data-target="3000">0+</h1>
+              <p>Students</p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-
-
+      
   <div style="margin-top: 130px;margin-bottom: 130px;">
 <div class="container my-5 py-5 d-flex flex-column justify-content-center align-items-center text-center bg-light " style="max-width: 80%;">
     <p>
