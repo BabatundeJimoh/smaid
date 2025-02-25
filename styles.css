@@ -203,3 +203,29 @@ p:nth-of-type(3) {
     position: relative; /* Ensures text stays above the overlay */
     z-index: 1;
 }
+
+
+
+.carousel-wrapper {
+    overflow: hidden;
+
+    padding: 10px 0;
+    display: flex;
+    justify-content: center;
+}
+
+.image-carousel {
+    display: flex;
+    gap: 80px;
+    animation: scrollImages 10s linear infinite;
+    width: max-content; /* Allows smooth looping */
+}
+
+.image-carousel img {
+    height: 7rem;
+}
+
+@keyframes scrollImages {
+    from { transform: translateX(100%); }
+    to { transform: translateX(-100%); }
+}
