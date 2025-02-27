@@ -27,6 +27,7 @@ body {
   
 
 
+
 /* Adjust text positioning and scaling for responsiveness */
 /* Make images fully responsive */
 .carousel-item img {
@@ -228,4 +229,212 @@ p:nth-of-type(3) {
 @keyframes scrollImages {
     from { transform: translateX(100%); }
     to { transform: translateX(-100%); }
+}
+
+ 
+/* Variables converted manually */
+:root {
+  --bgColor: ;
+  --dotColor: #bd1c1e;
+  --ringColor:  #1fb3e1;
+  --ruinIllusion: false;
+ 
+}
+
+/* General Styles */
+.animation-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  justify-content: center; /* Centers items */
+  gap: 20px; /* Adds space between items */
+}
+
+.animation-section {
+  overflow: hidden;
+  background: var(--bgColor);
+  width: 200px; /* Reduced width */
+  height: 200px; /* Reduced height */
+  border-radius: 50%;
+  position: relative;
+}
+
+* {
+  position: relative;
+}
+
+/* Middle Circle */
+.middleCircle {
+  height: 200px; /* Reduced height */
+  width: 200px; /* Reduced width */
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.middleCircle::before {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 2px; /* Adjusted top */
+  left: 2px; /* Adjusted left */
+  border: solid 15px #bd1c1e; /* Adjusted border */
+  border-radius: 50%;
+}
+
+.middleCircle::after {
+  content: '';
+  display: block;
+  position: absolute;
+  height: 100%; /* Adjusted height */
+  width: 100%; /* Adjusted width */
+  top: 2px; /* Adjusted top */
+  left: 2px; /* Adjusted left */
+  border: solid 7px #A6E7FC; /* Adjusted border */
+  border-radius: 50%;
+  
+}
+
+/* Animated Circles */
+.backCircle,
+.frontCircle {
+  height: 200px; /* Reduced height */
+  width: 200px; /* Reduced width */
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name: spin;
+  animation-duration: 12s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+.frontCircle {
+  animation-delay: 0s;
+}
+
+.smallCircle {
+  position: absolute;
+  width: 30px; /* Reduced width */
+  height: 110px; /* Reduced height */
+  left: calc(50% - 15px); /* Adjusted left */
+  top: -22.5px; /* Adjusted top */
+  transform-origin: 50% 100%;
+}
+
+.smallCircle::after {
+  content: '';
+  display: block;
+  height: 20px; /* Reduced height */
+  width: 20px; /* Reduced width */
+  border: solid 5px #1fb3e1; /* Adjusted border */
+  background-color: #1fb3e1;
+  border-radius: 50%;
+  margin: 20px;
+
+}
+
+/* Add animation */
+
+/* Add animation */
+.backCircle .smallCircle::after {
+  animation: move 1s ease-in-out alternate infinite;
+}
+
+.frontCircle .smallCircle::after {
+  animation: move 1s ease-in-out alternate infinite, opacity 2s linear infinite;
+}
+
+/* Loop converted manually for 12 small circles */
+.smallCircle:nth-child(1) { transform: rotate(30deg); }
+.smallCircle:nth-child(2) { transform: rotate(60deg); }
+.smallCircle:nth-child(3) { transform: rotate(90deg); }
+.smallCircle:nth-child(4) { transform: rotate(120deg); }
+.smallCircle:nth-child(5) { transform: rotate(150deg); }
+.smallCircle:nth-child(6) { transform: rotate(180deg); }
+.smallCircle:nth-child(7) { transform: rotate(210deg); }
+.smallCircle:nth-child(8) { transform: rotate(240deg); }
+.smallCircle:nth-child(9) { transform: rotate(270deg); }
+.smallCircle:nth-child(10) { transform: rotate(300deg); }
+.smallCircle:nth-child(11) { transform: rotate(330deg); }
+.smallCircle:nth-child(12) { transform: rotate(360deg); }
+
+/* Delay Mode manually set */
+.smallCircle:nth-child(1)::after { animation-delay: -99.5s; }
+.smallCircle:nth-child(2)::after { animation-delay: -99s; }
+.smallCircle:nth-child(3)::after { animation-delay: -98.5s; }
+.smallCircle:nth-child(4)::after { animation-delay: -98s; }
+.smallCircle:nth-child(5)::after { animation-delay: -97.5s; }
+.smallCircle:nth-child(6)::after { animation-delay: -97s; }
+.smallCircle:nth-child(7)::after { animation-delay: -96.5s; }
+.smallCircle:nth-child(8)::after { animation-delay: -96s; }
+.smallCircle:nth-child(9)::after { animation-delay: -95.5s; }
+.smallCircle:nth-child(10)::after { animation-delay: -95s; }
+.smallCircle:nth-child(11)::after { animation-delay: -94.5s; }
+.smallCircle:nth-child(12)::after { animation-delay: -94s; }
+
+/* Keyframes */
+@keyframes move {
+  from {
+      transform: translateY(-25px) scale(1.5); /* Adjusted for smaller circles */
+  }
+  to {
+      transform: translateY(25px) scale(1); /* Adjusted for smaller circles */
+  }
+}
+
+@keyframes opacity {
+  0%, 49% {
+      opacity: 0;
+  }
+  50%, 99% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes spin {
+  from {
+      transform: rotate(0deg);
+  }
+  to {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes ruinIllusion {
+  0%, 45% {
+      opacity: 0%;
+  }
+  50%, 95% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
+}
+
+.center-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ /* Adjust size if needed */
+
+  color: rgb(0, 0, 0); /* Adjust color if needed */
+  text-align: center;
+  z-index: 10; /* Ensures text appears above animations */
+  width: 100%;
+}
+
+/* Ensure spacing for mobile devices */
+@media screen and (max-width: 768px) {
+  .animation-section {
+    margin-bottom: 30px; /* Adds vertical spacing */
+  }
 }
