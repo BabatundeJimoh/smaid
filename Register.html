@@ -42,7 +42,7 @@
             width: 100%; /* Makes form fields responsive */
             min-height: 50px;
         }
-    
+      
         #message {
             min-height: 150px;
         }
@@ -85,6 +85,25 @@
             padding-left: 0;
             padding-right: 0;
         }
+        .small-checkboxes .form-check-input {
+          width: 20px;
+    height: 20px;  /* Or whatever smaller size you want */
+    min-height: unset;  /* Important! Resets that 50px rule */
+    margin-top: 13px;
+    margin-right: 5px;
+}
+
+
+.small-checkboxes .form-check {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.small-checkboxes .form-check-label {
+  font-size: 14px;
+  margin: 0;
+}
     </style>
   </head>
 
@@ -151,40 +170,92 @@
         </div>
 
         <div class="form-container">
-            <form id="contactForm">
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="fullName" class="form-label">Full Name</label>
-                        <input type="text" class="form-control" id="fullName" placeholder="Name" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="email" class="form-label">Email Address</label>
-                        <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
-                    </div>
-                </div>
-
-                <div class="row mb-3">
-                    <div class="col-md-6">
-                        <label for="phoneNumber" class="form-label">Phone Number</label>
-                        <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone" required>
-                    </div>
-                    <div class="col-md-6">
-                        <label for="subject" class="form-label">Type Your Subject</label>
-                        <input type="text" class="form-control" id="subject" placeholder="" required>
-                      
-                    </div>
-                </div>
-
-                <div class="mb-3">
-                    <label for="message" class="form-label">Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Type your message here" required></textarea>
-                </div>
-
-                <div class="text-center">
-                    <button type="submit" class="btn btn-custom">Register Now</button>
-                </div>
-            </form>
-        </div>
+          <form id="contactForm">
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="fullName" class="form-label">Full Name</label>
+                      <input type="text" class="form-control" id="fullName" placeholder="Name" required>
+                  </div>
+                  <div class="col-md-6">
+                      <label for="email" class="form-label">Email Address</label>
+                      <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+                  </div>
+              </div>
+      
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="phoneNumber" class="form-label">Phone Number</label>
+                      <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone" required>
+                  </div>
+                  <div class="col-md-6">
+                      <label class="form-label">Interested Courses</label><br>
+                      <div class="d-flex flex-row flex-wrap gap-3 align-items-center small-checkboxes">
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="french" name="courses" value="french">
+                              <label class="form-check-label" for="french" style="margin-top: 10px;">French</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="language" name="courses" value="language">
+                              <label class="form-check-label" for="language" style="margin-top: 10px;">Language</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="ict" name="courses" value="ict">
+                              <label class="form-check-label" for="ict" style="margin-top: 10px;">ICT</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="spanish" name="courses" value="spanish">
+                              <label class="form-check-label" for="spanish" style="margin-top: 10px;">Spanish</label>
+                          </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="italian" name="courses" value="italian">
+                              <label class="form-check-label" for="italian" style="margin-top: 10px;">Italian</label>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="courseDuration" class="form-label">Duration of the Course</label>
+                      <select class="form-select" id="courseDuration" name="courseDuration" style="min-height: 50px" required>
+                          <option value="" disabled selected>Select Duration</option>
+                          <option value="1-3">1-3 months</option>
+                          <option value="3-6">3-6 months</option>
+                          <option value="6-9">6-9 months</option>
+                      </select>
+                  </div>
+      
+                  <div class="col-md-6">
+                      <label for="accommodation" class="form-label">Accommodation</label>
+                      <select class="form-select" id="accommodation" name="accommodation" style="min-height: 50px" required>
+                          <option value="" disabled selected>Select Option</option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                      </select>
+                  </div>
+              </div>
+      
+              <div class="row mb-3">
+                  <div class="col-md-6">
+                      <label for="transportation" class="form-label">Do you need any help with transportation arrangement?</label>
+                      <select class="form-select" id="transportation" name="transportation" style="min-height: 50px" required>
+                          <option value="" disabled selected>Select Option</option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                      </select>
+                  </div>
+      
+                  <div class="col-md-6">
+                      <label for="otherQuestions" class="form-label">Any other questions</label>
+                      <textarea class="form-control" id="otherQuestions" name="otherQuestions" style="min-height: 50px" rows="1" placeholder="Type here..."></textarea>
+                  </div>
+              </div>
+      
+              <div class="text-center" style="margin-top: 50px;">
+                  <button type="submit" class="btn btn-custom">Register Now</button>
+              </div>
+          </form>
+      </div>
       </div>
 
       <div class="container py-5" style="margin-top: 60px;margin-bottom: 60px;">
@@ -195,10 +266,10 @@
               <div class="col-md-4">
                   <div class="contact-card">
                       <div class="icon-circle">
-                          <i class="fas fa-phone"></i>
+                          <i class="fab fa-whatsapp"></i>
                       </div>
                       <span class="contact-text"> 
-                          <h4>Phone</h4>+233201753103</span>
+                          <h4>Whatsapp</h4>+233201753103</span>
                   </div>
               </div>
 
@@ -230,14 +301,23 @@
           </div>
       </div>
 
+      
       <footer class="footer text-white">
         <!-- Top Section -->
         <div class="footer-top py-3" style="background-color: #1fb3e1;">
-          <div class="container-fluid">
+          <div class="container">
             <div class="row text-center" style="padding-top: 55px;">
               <!-- Logo Section -->
               <div class="col-md-4 d-flex flex-column align-items-center mb-3">
                 <img src="./images/Acadamy-logo.jpg" style="max-width: 100px; height: auto; margin-top: 10px;">
+                
+                <h3 style="padding-top: 15px;"><b>Socials</b></h3>
+                <div class="d-flex gap-3">
+                  <a href="https://https://www.facebook.com/share/p/1E7twSEqaw/" target="_blank"><i class="fab fa-facebook fs-3 text-white"></i></a>
+                  <a href="https://wa.me/+233201753103" target="_blank">
+                    <i class="fab fa-whatsapp  fs-3 text-white"></i>
+                  </a> 
+                  </div>
               </div>
       
               <!-- Quick Links Section -->
@@ -252,16 +332,11 @@
               <!-- Socials Section -->
               <div class="col-md-4 d-flex flex-column align-items-center">
                 <h3><b>Contact Us</b></h3>
+                <p>Ghana</p>
+                <p>Cote d'Ivoire</p>
                 <p class="mb-1">Phone: +233201753103</p>
                 <p class="mb-1">Email: academy@smaid.org</p>
-      
-                <h3 style="padding-top: 15px;"><b>Socials</b></h3>
-                <div class="d-flex gap-3">
-                  <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram fs-3 text-white"></i></a>
-                  <a href="https://x.com" target="_blank"><i class="fab fa-x-twitter fs-3 text-white"></i></a>
-                  <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook fs-3 text-white"></i></a>
-                  <a href="https://tiktok.com" target="_blank"><i class="fab fa-tiktok fs-3 text-white"></i></a>
-                </div>
+                     </div>
               </div>
             </div>
           </div>
@@ -281,7 +356,85 @@
           </div>
         </div>
       </footer>
+      
+      
     </main>
+
+
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+          event.preventDefault();
+      
+          const fullName = document.getElementById('fullName').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const phoneNumber = document.getElementById('phoneNumber').value.trim();
+          const courseDuration = document.getElementById('courseDuration').value;
+          const accommodation = document.getElementById('accommodation').value;
+          const transportation = document.getElementById('transportation').value;
+          const otherQuestions = document.getElementById('otherQuestions').value.trim();
+      
+          const courses = [];
+          document.querySelectorAll('input[name="courses"]:checked').forEach((checkbox) => {
+              courses.push(checkbox.value);
+          });
+      
+          let errors = [];
+      
+          if (fullName === '') {
+              errors.push("Full Name is required.");
+          }
+      
+          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+              errors.push("Valid Email Address is required.");
+          }
+      
+          if (phoneNumber === '') {
+              errors.push("Phone Number is required.");
+          }
+      
+          if (courses.length === 0) {
+              errors.push("Please select at least one interested course.");
+          }
+      
+          if (courseDuration === '') {
+              errors.push("Please select the Duration of the Course.");
+          }
+      
+          if (accommodation === '') {
+              errors.push("Please select Accommodation option.");
+          }
+      
+          if (transportation === '') {
+              errors.push("Please select Transportation arrangement option.");
+          }
+      
+          if (errors.length > 0) {
+              alert("Please fix the following errors:\n\n" + errors.join("\n"));
+              return;
+          }
+      
+          const formData = {
+              fullName,
+              email,
+              phoneNumber,
+              courses,
+              courseDuration,
+              accommodation,
+              transportation,
+              otherQuestions,
+          };
+      
+          console.log("Form Data Submitted:", formData);
+      
+          // Normally you'd send formData to a server using fetch()
+          // fetch('/submit', { method: 'POST', body: JSON.stringify(formData) })
+      
+          alert("Form submitted successfully! (Check console for data)");
+      
+          // Optional: Uncomment if you want the form to actually submit somewhere
+          // event.target.submit();
+      });
+      </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
