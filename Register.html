@@ -170,7 +170,7 @@
         </div>
 
         <div class="form-container">
-          <form id="contactForm">
+          <form id="contactForm" action="/submit-form" method="POST" data-type="registration-form">
               <div class="row mb-3">
                   <div class="col-md-6">
                       <label for="fullName" class="form-label">Full Name</label>
@@ -185,8 +185,21 @@
               <div class="row mb-3">
                   <div class="col-md-6">
                       <label for="phoneNumber" class="form-label">Phone Number</label>
-                      <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone" required>
+                      <div class="input-group">
+                          <input type="text" class="form-control" id="countryCode" placeholder="+233" style="max-width: 90px;" required>
+                          <input type="tel" class="form-control" id="phoneNumber" placeholder="Phone" required>
+                      </div>
                   </div>
+                  <div class="col-md-6">
+                      <label for="whatsappNumber" class="form-label">WhatsApp Number</label>
+                      <div class="input-group">
+                          <input type="text" class="form-control" id="whatsappCountryCode" placeholder="+233" style="max-width: 90px;" required>
+                          <input type="tel" class="form-control" id="whatsappNumber" placeholder="WhatsApp Number" required>
+                      </div>
+                  </div>
+              </div>
+      
+              <div class="row mb-3">
                   <div class="col-md-6">
                       <label class="form-label">Interested Courses</label><br>
                       <div class="d-flex flex-row flex-wrap gap-3 align-items-center small-checkboxes">
@@ -199,10 +212,6 @@
                               <label class="form-check-label" for="language" style="margin-top: 10px;">English</label>
                           </div>
                           <div class="form-check">
-                              <input class="form-check-input" type="checkbox" id="ict" name="courses" value="ict">
-                              <label class="form-check-label" for="ict" style="margin-top: 10px;">ICT</label>
-                          </div>
-                          <div class="form-check">
                               <input class="form-check-input" type="checkbox" id="spanish" name="courses" value="spanish">
                               <label class="form-check-label" for="spanish" style="margin-top: 10px;">Spanish</label>
                           </div>
@@ -210,11 +219,13 @@
                               <input class="form-check-input" type="checkbox" id="italian" name="courses" value="italian">
                               <label class="form-check-label" for="italian" style="margin-top: 10px;">Italian</label>
                           </div>
+                          <div class="form-check">
+                              <input class="form-check-input" type="checkbox" id="ict" name="courses" value="ict">
+                              <label class="form-check-label" for="ict" style="margin-top: 10px;">ICT</label>
+                          </div>
                       </div>
                   </div>
-              </div>
       
-              <div class="row mb-3">
                   <div class="col-md-6">
                       <label for="courseDuration" class="form-label">Duration of the Course</label>
                       <select class="form-select" id="courseDuration" name="courseDuration" style="min-height: 50px" required>
@@ -222,15 +233,6 @@
                           <option value="1-3">1-3 months</option>
                           <option value="3-6">3-6 months</option>
                           <option value="6-9">6-9 months</option>
-                      </select>
-                  </div>
-      
-                  <div class="col-md-6">
-                      <label for="accommodation" class="form-label">Accommodation</label>
-                      <select class="form-select" id="accommodation" name="accommodation" style="min-height: 50px" required>
-                          <option value="" disabled selected>Select Option</option>
-                          <option value="yes">Yes</option>
-                          <option value="no">No</option>
                       </select>
                   </div>
               </div>
@@ -246,8 +248,19 @@
                   </div>
       
                   <div class="col-md-6">
+                      <label for="accommodation" class="form-label">Do you need any help with accommodation?</label>
+                      <select class="form-select" id="accommodation" name="accommodation" style="min-height: 50px" required>
+                          <option value="" disabled selected>Select Option</option>
+                          <option value="yes">Yes</option>
+                          <option value="no">No</option>
+                      </select>
+                  </div>
+              </div>
+      
+              <div class="row mb-3">
+                  <div class="col-md-6">
                       <label for="otherQuestions" class="form-label">Any other questions</label>
-                      <textarea class="form-control" id="otherQuestions" name="otherQuestions" style="min-height: 50px" rows="1" placeholder="Type here..."></textarea>
+                      <textarea class="form-control" id="otherQuestions" name="otherQuestions" style="min-height: 90px" rows="1" placeholder="Type here..."></textarea>
                   </div>
               </div>
       
@@ -256,6 +269,7 @@
               </div>
           </form>
       </div>
+      
       </div>
 
       <div class="container py-5" style="margin-top: 60px;margin-bottom: 60px;">
@@ -332,9 +346,9 @@
               <!-- Socials Section -->
               <div class="col-md-4 d-flex flex-column align-items-center">
                 <h3><b>Contact Us</b></h3>
-                <p>Ghana</p>
-                <p>Cote d'Ivoire</p>
-                <p class="mb-1">Phone: +233201753103</p>
+                <p>Ghana: +233 201753103 <img src="./images/Gh.webp" style="height: 13px;width: 17px;"> </p>
+                <p>Cote d'Ivoire: +225 0758888280 <img src="./images/Cote.webp" style="height: 13px;width: 17px;"></p>
+                <p class="mb-1">Togo: +228 70882866  <img src="./images/togo.webp" style="height: 13px;width: 17px;"></p>
                 <p class="mb-1">Email: academy@smaid.org</p>
                      </div>
               </div>
@@ -361,83 +375,15 @@
     </main>
 
 
-    <script>
-      document.getElementById('contactForm').addEventListener('submit', function(event) {
-          event.preventDefault();
-      
-          const fullName = document.getElementById('fullName').value.trim();
-          const email = document.getElementById('email').value.trim();
-          const phoneNumber = document.getElementById('phoneNumber').value.trim();
-          const courseDuration = document.getElementById('courseDuration').value;
-          const accommodation = document.getElementById('accommodation').value;
-          const transportation = document.getElementById('transportation').value;
-          const otherQuestions = document.getElementById('otherQuestions').value.trim();
-      
-          const courses = [];
-          document.querySelectorAll('input[name="courses"]:checked').forEach((checkbox) => {
-              courses.push(checkbox.value);
-          });
-      
-          let errors = [];
-      
-          if (fullName === '') {
-              errors.push("Full Name is required.");
-          }
-      
-          if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-              errors.push("Valid Email Address is required.");
-          }
-      
-          if (phoneNumber === '') {
-              errors.push("Phone Number is required.");
-          }
-      
-          if (courses.length === 0) {
-              errors.push("Please select at least one interested course.");
-          }
-      
-          if (courseDuration === '') {
-              errors.push("Please select the Duration of the Course.");
-          }
-      
-          if (accommodation === '') {
-              errors.push("Please select Accommodation option.");
-          }
-      
-          if (transportation === '') {
-              errors.push("Please select Transportation arrangement option.");
-          }
-      
-          if (errors.length > 0) {
-              alert("Please fix the following errors:\n\n" + errors.join("\n"));
-              return;
-          }
-      
-          const formData = {
-              fullName,
-              email,
-              phoneNumber,
-              courses,
-              courseDuration,
-              accommodation,
-              transportation,
-              otherQuestions,
-          };
-      
-          console.log("Form Data Submitted:", formData);
-      
-          // Normally you'd send formData to a server using fetch()
-          // fetch('/submit', { method: 'POST', body: JSON.stringify(formData) })
-      
-          alert("Form submitted successfully! (Check console for data)");
-      
-          // Optional: Uncomment if you want the form to actually submit somewhere
-          // event.target.submit();
-      });
-      </script>
 
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   </body>
 </html>
+
+
+
+
+
+
